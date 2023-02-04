@@ -1,0 +1,16 @@
+body,
+html {
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #f3f3f3;
+}
+
+
+body{
+    padding-top: 90px;
+    
+
+    >*{
+        padding: 90px 60px;
+    }
+}

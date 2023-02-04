@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="cabecalho-conteudo text-center">
+                <h1>Pesquise o filme</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid necessitatibus cumque explicabo adipisci rerum praesentium similique enim aperiam ut quae distinctio architecto autem, amet dolore sunt commodi maxime tenetur.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <form (ngSubmit)="obterFilme(inputTitle.value)">
+                <input type="text" #inputTitle name="filme" ng-model="nomeFilme" placeholder="Digite o nome do filme" required>
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<div class="v-container" *ngIf="mostrarResultado">
+    <ng-container class="delay" *ngIf="!erroFilme;else notFound" >
+        <div class="v-column column-first">
+            <img [src]="dadosFilme['Poster']">
+        </div>
+        <div class="v-column column-second">
+            <h2>{{ dadosFilme['Title'] }}</h2>
+            <p>{{ dadosFilme['Plot'] }} </p>
+
+            <p>Lançamento: {{ dadosFilme['Released'] }}</p>
+
+            <ul class="no-padding">
+                <li *ngFor="let genero of generos" class="genero">{{ genero }}</li>
+            </ul>
+        </div>
+        
+    </ng-container>
+
+    <ng-template #notFound>
+        <div class="v-column">
+            <p>Erro ao buscar filme 😥</p>
+        </div>
+    </ng-template>
+</div>

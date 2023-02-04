@@ -1,0 +1,26 @@
+/*  Esse é uma paródia do bootstrap */
+
+.v-container{
+    max-width: 1140px;
+    margin: 40px auto;
+}
+
+.v-column{
+    display: flex;
+    padding: 16px;
+
+}
+
+.column-first, .column-second{
+    vertical-align: middle;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 900px){
+    .v-container{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}

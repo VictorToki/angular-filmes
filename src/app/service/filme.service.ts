@@ -1,24 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Movie } from '../interface/movie';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmeService {
+  private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {}
 
+  getFilme(nomefilme:string): Observable<Movie>{
+    return this.http.get<Movie>(`${this.apiUrl}&t=${nomefilme}`);
   }
-
-  // getFilmes(): Observable<Filme[]>{
-  //   return this.http.get<Filme[]>(`http://www.omdbapi.com/?i=tt3896198&apikey=d727cf7b₢`);
-  // }
-
-  // getFilme(): Observable<Filme>{
-  //   return this.http.get<Filme>(`http://www.omdbapi.com/?i=tt3896198&apikey=d727cf7b₢/1`);
-  // }
 }
-
-
-// http://www.omdbapi.com/?i=tt3896198&apikey=d727cf7b₢

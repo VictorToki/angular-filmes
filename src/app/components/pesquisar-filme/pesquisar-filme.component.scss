@@ -1,0 +1,65 @@
+@use 'src/assets/styles/_breakpoints.scss' as *;
+@import url('src/assets/styles/_breakpoints.scss');
+@import url('src/assets/styles/_vstrap.scss');
+
+.row{
+    margin-top: 16px;
+    ~.row{
+        margin-top: 32px;
+    }
+}
+
+button{
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0px 24px;
+    padding: 8px 24px;
+    border-radius: 8px;
+    background: #f58b22;
+    color: #fff;
+    transition: .2s;
+    border: none;
+    max-width: 160px;
+
+    &:hover{
+        background-color: #bf3d55;
+    }
+
+    @include media-breakpoint-down('sm'){
+        margin: 16px auto;
+    }
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    
+    @include media-breakpoint-down('sm'){
+        flex-direction: column;
+    }
+
+    input{
+        padding: 8px;
+        border-radius: 8px;
+        
+        @include media-breakpoint-up('md'){
+            min-width: 400px;
+        }
+    }
+
+}    
+
+.genero{
+    list-style: none;
+    font-size: 18px;
+    display: inline;
+    padding: 4px 12px;
+    border: 1px solid #000;
+    border-radius: 32px;
+    
+    &:not(:first-child){
+        margin-left:8px;
+    }
+}
