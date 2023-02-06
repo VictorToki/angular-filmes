@@ -8,12 +8,19 @@
 .v-column{
     display: flex;
     padding: 16px;
-
 }
 
 .column-first, .column-second{
     vertical-align: middle;
     flex-direction: column;
+}
+
+.v-justify-center{
+    justify-content: center;
+}
+
+.v-align-center{
+    align-items: center;
 }
 
 @media only screen and (min-width: 900px){
