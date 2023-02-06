@@ -1,9 +1,17 @@
 <header>
     <div class="container">
-        <div class="row">
-        <div class="col">
-            <h3>Angular Study Project</h3>
-        </div>
+        <div class="row justify-content-between align-items-center">
+            <div class="col">
+                <h3 class="no-margin">Angular Study Project</h3>
+            </div>
+
+            <div class="col">
+                <div class="font-size-buttons no-margin" (click)="onButtonGroupClick($event)">
+                    <button class="btn active" type="button" (click)="setFontSize(0)">A</button>
+                    <button class="btn" type="button" (click)="setFontSize(1)">A</button>
+                    <button class="btn" type="button" (click)="setFontSize(2)">A</button>
+                </div>
+            </div>
         </div>
     </div>
 </header>

@@ -63,3 +63,8 @@ form{
         margin-left:8px;
     }
 }
+
+h1, p{
+    transition: .5s;
+    font-size: revert;
+}
